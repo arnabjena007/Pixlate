@@ -2,7 +2,6 @@
 
 Turn photos into abstract art.
 
-![Road in the Winter Forest by Olga Malamud Pavlovich](img/winter.png)
 
 Install the command-line tool with `go get`:
 
