@@ -3,9 +3,8 @@
 Turn photos into abstract art.
 
 <br>
-[🎥 Watch the video](https://github.com/user-attachments/assets/3f3885c3-b7c4-4240-9bb9-1df03461941f)
 
-
+https://github.com/user-attachments/assets/3f3885c3-b7c4-4240-9bb9-1df03461941f
 
 
 Install the command-line tool with `go get`:
