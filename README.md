@@ -1,6 +1,7 @@
 # Pixlate
 
 Turn photos into abstract art.
+https://github.com/Pixlate/video.mp4
 
 
 Install the command-line tool with `go get`:
