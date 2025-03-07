@@ -1,4 +1,4 @@
-# Pix
+# Pixlate
 
 Turn photos into abstract art.
 
