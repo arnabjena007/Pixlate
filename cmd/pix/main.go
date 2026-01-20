@@ -11,7 +11,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/yurivish/pix"
+	"github.com/arnabjena007/pixlate"
 )
 
 func main() {
