@@ -4,27 +4,56 @@ Turn photos into abstract art.
 
 https://github.com/user-attachments/assets/3f3885c3-b7c4-4240-9bb9-1df03461941f
 
+## Installation
 
-Install the command-line tool with `go get`:
+Recommended (modules-aware, Go 1.18+):
 
 ```
-go get -u github.com/arnabjena007/pixlate/cmd/pix
+go install github.com/arnabjena007/pixlate/cmd/pix@latest
 ```
 
-Run it like so:
+This installs the `pix` binary into your `GOBIN` (or `$HOME/go/bin` by default). Make sure that directory is in your `PATH`.
+
+Build from source:
+
+```
+git clone https://github.com/arnabjena007/Pixlate.git
+cd Pixlate
+go build ./cmd/pix
+# then run:
+./pix -in picture.jpg
+```
+
+## Usage
+
+Run it like so (minimal):
 
 ```
 pix -in picture.jpg
 ```
 
-Generate multiple outputs by sweeping the parameter space:
+Run with output, size, or generate multiple variations:
 
 ```
+pix -in picture.jpg -out pix.output.png -width 800 -height 800
 pix -in picture.jpg -sweep
+pix -in picture.jpg -variations 4
 ```
 
-Pix is capable of generating 8,000×8,000 outputs in around a minute. 
+## Flags
 
-The pixel-placement process is inherently serial and performs one nearest-neighbor search per output pixel, so the time taken depends significantly on the placement order and color distribution since those affect the size of the dynamic search tree and the shape of the frontier. 
+The command supports the following flags (see `pix -h` for detailed help):
 
-When the `-sweep` or `-variations` flags are used, variations are generated in parallel.
+- `-in` (required): input image path or URL
+- `-out`: output image path
+- `-width`, `-height`: dimensions of the output
+- `-white-percent`, `-colorsort`, `-random`, `-reverse`
+- `-sweep`, `-random-seed`, `-variations`
+- `-compress`: png compression level
+- `-seeds`: seed positions (e.g. "x y x y ...")
+
+## Notes
+
+- The README previously recommended `go get -u ...`; modern Go modules usage prefers `go install ...@latest` for installing binaries. `go get` for installing binaries is deprecated in newer Go versions.
+- Recommend using Go 1.18+ for best compatibility with module behavior.
+- If you need any help updating the README further or opening a PR with code fixes (I found a couple of small issues in cmd/pix/main.go), I can prepare that for you.
