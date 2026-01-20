@@ -1,3 +1,4 @@
-module github.com/yurivish/pix
+module github.com/arnabjena007/pixlate
+
 
 go 1.17
